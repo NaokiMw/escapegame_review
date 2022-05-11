@@ -1,0 +1,45 @@
+<h3>ユーザー情報一覧</h3>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>H.N</th>
+      <th>title</th>
+      <th>難易度</th>
+      <th>ストーリー</th>
+      <th>満足度</th>
+      <th>ひらめき</th>
+      <th>意外性</th>
+      <th>place</th>
+      <th>体験日</th>
+      <th>開始時間</th>
+      <th>結果</th>
+      <th>photo</th>
+      <th>更新日</th>
+      <th>作成日</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.user.name %></td>
+        <td><%= event.title %></td>
+        <td><%= event.review_1 %></td>
+        <td><%= event.review_2 %></td>
+        <td><%= event.review_3 %></td>
+        <td><%= event.review_4 %></td>
+        <td><%= event.review_5 %></td>
+        <td><%= event.place %></td>
+        <td><%= event.play_day %></td>
+        <td><%= event.start_time %></td>
+        <td><%= event.result %></td>
+        <td><%= event.event_image_url %></td>
+        <td><%= event.updated_at %></td>
+        <td><%= event.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ 
+<p><%= link_to "イベント新規登録", new_event_path %></p>

@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_11_030056) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_11_052612) do
+  create_table "events", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.integer "review_1"
+    t.integer "review_2"
+    t.integer "review_3"
+    t.integer "review_4"
+    t.integer "review_5"
+    t.string "place"
+    t.date "play_day"
+    t.time "start_time"
+    t.boolean "result"
+    t.string "event_image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
